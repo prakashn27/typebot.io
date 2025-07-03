@@ -4,6 +4,8 @@ ARG SCOPE
 ENV SCOPE=${SCOPE}
 RUN apt-get -qy update \
     && apt-get -qy --no-install-recommends install \
+    ca-certificates \
+    gnupg \
     openssl \
     && apt-get autoremove -yq \
     && apt-get clean \
